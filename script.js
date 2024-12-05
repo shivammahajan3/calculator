@@ -31,3 +31,11 @@ Array.from(buttons).forEach((button)=>{
         }
     })
 })
+// Block alphabets and symbols from being typed in input box
+document.querySelector('input').addEventListener('keypress', (event) => {
+    // Allow only digits (0-9), decimal point (.), and operators (+, -, *, /, %)
+    const allowedKeys = '0123456789+-*/%=.'; 
+    if (!allowedKeys.includes(event.key)) {
+        event.preventDefault(); // Prevent the input from being added
+    }
+});
